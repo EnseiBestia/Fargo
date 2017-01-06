@@ -1,0 +1,52 @@
+html, body {width:100%;height:100%;font-family:"Microsoft YaHei";}
+body {padding:0;margin:0;background:#e5e5e5 url(../images/bg.png) no-repeat;background-size:100%;}
+.content{}
+.row{width:1200px;margin:0 auto; margin-top:80px;}
+.sildbar{width:450px;float:left;}
+.login{width:720px;right:15px;top:90px;color:#6d7578;position: absolute;}
+.login-title{background:url(../images/login-title.png) no-repeat; height:54px;position:relative;left:230px}
+.login-main{background-color:rgba(255,255,255,0.5); height:auto; width:390px; margin:0 auto; height:380px; padding:20px 20px; margin-top:40px;position:relative;float:right;right:90px}
+.input-smmmm{ height:45px;border-radius:0;}
+.input-error{ color: #b94a48;
+background-color: #f2dede;
+border-color: #eed3d7; width:100%; }
+.user-error{ padding:0 4px;}
+.form-color{border-radius:0;border:none; height:45px; width:185px;}
+.pull-center span{ padding-left:10px;}
+.pull-center i{ padding-left:10px; font-style:normal; font-size:14px;}
+.btn-color{border-radius:0; color:#FFF;border:none; background-color:#d80d18; height:36px; font-size:18px; margin:15px 0;}
+.input-smmm{margin:85px 0; font-size:14px; color:#6d7578;}
+span.login-checkbox > input[type="checkbox"] {float:left;opacity:0;width:14px;}
+span.login-checkbox > input[type="checkbox"] + label {background: url(../images/check.png) no-repeat scroll 0 0 rgba(0, 0, 0, 0);clear: none;cursor: pointer;display: block;font-size: 12px;height: 14px;line-height: 1.2em;margin: 0;padding: 0 0 0 22px;}
+span.login-checkbox > input[type="checkbox"]:checked + label {background-position: 0 -15px;}
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {color:#FFF;background-color:#f23943;}		
+.footer{width:1200px;margin:0 auto;text-align:center; margin-bottom:20px;position: absolute;bottom:0px}
+.footer p{ padding-top:40px; color:#FFF;}
+
+.form-signin {
+    max-width: 300px;
+    
+    margin: 20px auto 20px;
+    
+    
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    
+}
+
+.form-signin .form-signin-heading {
+    margin: 0 0 20px 0;
+}
+
+.form-signin .checkbox {
+    margin-bottom: 10px;
+}
+
+.form-signin input[type="text"],
+.form-signin input[type="password"] {
+    font-size: 16px;
+    height: 40px;
+    
+}
+

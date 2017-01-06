@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<type-mapping>
+	
+	  <sql-type jdbc-type="VARCHAR" length="1" hibernate-type="yes_no" /> 
+	
+	  <sql-type jdbc-type="NUMERIC" precision="1" hibernate-type="boolean" /> 
+	
+	  <sql-type jdbc-type="BIGINT" hibernate-type="java.lang.Long" /> 
+	  <sql-type jdbc-type="INTEGER" hibernate-type="java.lang.Long" /> 
+	  <sql-type jdbc-type="NUMERIC" hibernate-type="java.lang.Long" /> 
+	  <sql-type jdbc-type="TIMESTAMP" hibernate-type="java.util.Date" /> 	  
+	</type-mapping>
+
+	<!--  需要生成的列表-->
+		<table-filter  match-name="ct_t" exclude ="false"/>
+	<!-- 不需要生成的列表  与上边需要生成的二选一 
+	<table-filter  match-name="cfg_car_problemtype" exclude ="true"/>   -->
+	
+  </hibernate-reverse-engineering>

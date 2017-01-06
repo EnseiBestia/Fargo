@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+    <appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                value="%p [%t] %c.%M(%L) | %m%n"/>
+        </layout>
+    </appender>
+    
+    <appender name="FileForSchedule" class="org.apache.log4j.RollingFileAppender"> 
+	   <param name="File" value="${catalina.base}/logs/schedule.log" /> 
+	   <layout class="org.apache.log4j.PatternLayout"> 
+	      <param name="ConversionPattern" 
+	         value="%-d{yyyy-MM-dd HH:mm:ss} %C{1} | %m%n" /> 
+	   </layout> 	
+	</appender>
+	<appender name="FileForJob" class="org.apache.log4j.RollingFileAppender"> 
+	   <param name="File" value="${catalina.base}/logs/job.log" /> 
+	   <layout class="org.apache.log4j.PatternLayout"> 
+	      <param name="ConversionPattern" 
+	         value="%-d{yyyy-MM-dd HH:mm:ss} %C{1} | %m%n" /> 
+	   </layout> 	
+	</appender>
+	
+    <!-- Suppress success logging from InteractiveAuthenticationSuccessEvent -->
+    <logger name="org.springframework.security">
+        <level value="ERROR"/>
+    </logger>
+
+    <logger name="org.apache">
+        <level value="WARN"/>
+    </logger>
+<!-- 
+	   <logger name="org.hibernate.SQL">
+	        <level value="trace"/>
+	    </logger>
+	    <logger name="org.hibernate.type">
+	        <level value="TRACE"/>
+	    </logger>
+	    <logger name="org.hibernate.engine.query">
+	        <level value="TRACE"/>
+	    </logger>  
+	    <logger name="org.hibernate.jdbc">
+	        <level value="TRACE"/>
+	    </logger>   
+	
+   -->
+
+    <logger name="org.springframework">
+        <level value="WARN"/>
+    </logger>
+   
+    <logger name="com.fargo.basis">
+        <level value="WARN"/>
+    </logger>
+
+    <logger name="com.fargo.basis.tool">
+        <level value="INFO"/>
+    </logger>
+
+    <root>
+        <level value="WARN"/>
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+</log4j:configuration>

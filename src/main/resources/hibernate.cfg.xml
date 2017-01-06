@@ -1,0 +1,21 @@
+<!-- NOTE: If you're working offline, you might have to change the DOCTYPE to the following:
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">-->
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <mapping class="com.fargo.basis.model.User"/>
+        <mapping class="com.fargo.basis.model.Role"/>
+        <mapping class="com.fargo.basis.model.AuthAppRole"/>
+        <mapping class="com.fargo.basis.model.AuthAppUser"/>
+        <mapping class="com.fargo.basis.model.AuthPrivilegeInfo"/>
+        <mapping class="com.fargo.basis.model.CfgEnumInfo"/>
+        <mapping class="com.fargo.basis.model.CfgFormInfo"/>
+        <mapping class="com.fargo.basis.model.LibraryInfo"/>
+        <mapping class="com.fargo.basis.model.CfgIconInfo"/>
+        <mapping class="com.fargo.basis.model.StSystemNoticeInfo"/>  
+        <mapping class="com.fargo.basis.model.CfgParameter"/>          
+    </session-factory>
+</hibernate-configuration>

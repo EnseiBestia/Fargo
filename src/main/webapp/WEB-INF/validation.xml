@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE form-validation PUBLIC
+        "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.3.0//EN"
+        "http://jakarta.apache.org/commons/dtds/validator_1_3_0.dtd">
+
+<form-validation>
+    <global>
+        <constant>
+            <constant-name>phone</constant-name>
+            <constant-value>^\(?(\d{3})\)?[-| ]?(\d{3})[-| ]?(\d{4})$</constant-value>
+        </constant>
+        <constant>
+            <constant-name>zip</constant-name>
+            <constant-value>^\d{5}\d*$</constant-value>
+        </constant>
+        <constant>
+            <constant-name>currency</constant-name>
+            <constant-value>^\d{1,3}(,?\d{1,3})*\.?(\d{1,2})?$</constant-value>
+        </constant>
+    </global>
+    <formset>
+        <form name="fileUpload">
+            <field property="name" depends="required">
+                <arg key="uploadForm.name"/>
+            </field>
+            <!-- Client-side Javascript won't catch this in IE, but server-side will -->
+            <field property="file" depends="required">
+                <arg key="uploadForm.file"/>
+            </field>
+        </form>
+        <form name="user">
+            <field property="username" depends="required">
+                <arg key="user.username"/>
+            </field>
+            <field property="password" depends="required,twofields">
+                <msg name="twofields" key="errors.twofields"/>
+                <arg key="user.password"/>
+                <arg key="user.confirmPassword" position="1"/>
+                <var>
+                    <var-name>secondProperty</var-name>
+                    <var-value>confirmPassword</var-value>
+                </var>
+            </field>
+            <field property="confirmPassword" depends="required">
+                <arg key="user.confirmPassword"/>
+            </field>
+            <field property="firstName" depends="required">
+                <arg key="user.firstName"/>
+            </field>
+            <field property="lastName" depends="required">
+                <arg key="user.lastName"/>
+            </field>
+            <field property="email" depends="required,email">
+                <arg key="user.email"/>
+            </field>
+            <field property="passwordHint" depends="required">
+                <arg key="user.passwordHint"/>
+            </field>
+        </form>
+        
+        
+        <!--AuthPrivilegeInfo-START-->
+        <form name="authPrivilegeInfo">
+        </form>
+        <!--AuthPrivilegeInfo-END-->
+        <!--CfgEnumInfo-START-->
+        <form name="cfgEnumInfo">
+        </form>
+        <!--CfgEnumInfo-END-->
+        <!--CfgEnumValueInfo-START-->
+        <form name="cfgEnumValueInfo">
+        </form>
+        <!--CfgEnumValueInfo-END-->
+        
+        
+        <!--CfgFixedPropertyValue-START-->
+        <form name="cfgFixedPropertyValue">
+            <field property="overt" depends="required">
+                <arg key="cfgFixedPropertyValue.overt"/>
+            </field>
+        </form>
+        <!--CfgFixedPropertyValue-END-->
+        
+        <!--CfgCustomProperty-START-->
+        <form name="cfgCustomProperty">
+            <field property="library" depends="required">
+                <arg key="cfgCustomProperty.library"/>
+            </field>
+            <field property="max" depends="required">
+                <arg key="cfgCustomProperty.max"/>
+            </field>
+            <field property="maxlength" depends="required">
+                <arg key="cfgCustomProperty.maxlength"/>
+            </field>
+            <field property="mimlength" depends="required">
+                <arg key="cfgCustomProperty.mimlength"/>
+            </field>
+            <field property="min" depends="required">
+                <arg key="cfgCustomProperty.min"/>
+            </field>
+            <field property="multiple" depends="required">
+                <arg key="cfgCustomProperty.multiple"/>
+            </field>
+            <field property="overt" depends="required">
+                <arg key="cfgCustomProperty.overt"/>
+            </field>
+            <field property="required" depends="required">
+                <arg key="cfgCustomProperty.required"/>
+            </field>
+            <field property="useQuery" depends="required">
+                <arg key="cfgCustomProperty.useQuery"/>
+            </field>
+        </form>
+        <!--CfgCustomProperty-END-->
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <!--DataModelInfo-START-->
+        <form name="dataModelInfo">
+            <field property="library" depends="required">
+                <arg key="dataModelInfo.library"/>
+            </field>
+            <field property="overt" depends="required">
+                <arg key="dataModelInfo.overt"/>
+            </field>
+        </form>
+        <!--DataModelInfo-END-->
+        
+        
+        
+        
+        <!--RmQuestionInfo-START-->
+        <form name="rmQuestionInfo">
+        </form>
+        <!--RmQuestionInfo-END-->
+        
+        <!--RmQuestionInfoHistory-START-->
+        <form name="rmQuestionInfoHistory">
+        </form>
+        <!--RmQuestionInfoHistory-END-->
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <!--QsbCatalogInfo-START-->
+        <form name="qsbCatalogInfo">
+            <field property="overt" depends="required">
+                <arg key="qsbCatalogInfo.overt"/>
+            </field>
+        </form>
+        <!--QsbCatalogInfo-END-->
+        <!--QbsPaperInfo-START-->
+        <form name="qbsPaperInfo">
+            <field property="overt" depends="required">
+                <arg key="qbsPaperInfo.overt"/>
+            </field>
+        </form>
+        <!--QbsPaperInfo-END-->
+        
+        
+        
+        <!--DmObjectInfo-START-->
+        <form name="dmObjectInfo">
+            <field property="overt" depends="required">
+                <arg key="dmObjectInfo.overt"/>
+            </field>
+        </form>
+        <!--DmObjectInfo-END-->
+        
+        
+        <!--DmStatColumnInfo-START-->
+        <form name="dmStatColumnInfo">
+            <field property="ifHiddenColumn" depends="required">
+                <arg key="dmStatColumnInfo.ifHiddenColumn"/>
+            </field>
+        </form>
+        <!--DmStatColumnInfo-END-->
+        <!--DmStatSheetInfo-START-->
+        <form name="dmStatSheetInfo">
+            <field property="ifDataSource" depends="required">
+                <arg key="dmStatSheetInfo.ifDataSource"/>
+            </field>
+            <field property="overt" depends="required">
+                <arg key="dmStatSheetInfo.overt"/>
+            </field>
+        </form>
+        <!--DmStatSheetInfo-END-->
+        
+        
+        
+        <!--CfgFormInfo-START-->
+        <form name="cfgFormInfo">
+        </form>
+        <!--CfgFormInfo-END-->
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <!--QbPaperQuestionInfo-START-->
+        <form name="qbPaperQuestionInfo">
+            <field property="overt" depends="required">
+                <arg key="qbPaperQuestionInfo.overt"/>
+            </field>
+        </form>
+        <!--QbPaperQuestionInfo-END-->
+        
+        
+        
+        
+        
+        <!--DmPaperInfo-START-->
+        <form name="dmPaperInfo">
+            <field property="overt" depends="required">
+                <arg key="dmPaperInfo.overt"/>
+            </field>
+        </form>
+        <!--DmPaperInfo-END-->
+        
+        
+        
+        
+        
+        
+        <!--DmPaperOfDataModel-START-->
+        <form name="dmPaperOfDataModel">
+            <field property="overt" depends="required">
+                <arg key="dmPaperOfDataModel.overt"/>
+            </field>
+        </form>
+        <!--DmPaperOfDataModel-END-->
+        <!--DmDataModelInfo-START-->
+        <form name="dmDataModelInfo">
+            <field property="overt" depends="required">
+                <arg key="dmDataModelInfo.overt"/>
+            </field>
+        </form>
+        <!--DmDataModelInfo-END-->
+        <!--QbCatalogInfo-START-->
+        <form name="qbCatalogInfo">
+            <field property="overt" depends="required">
+                <arg key="qbCatalogInfo.overt"/>
+            </field>
+        </form>
+        <!--QbCatalogInfo-END-->
+        
+        <!--QbPaperQuestionInfo-START-->
+        <form name="qbPaperQuestionInfo">
+            <field property="overt" depends="required">
+                <arg key="qbPaperQuestionInfo.overt"/>
+            </field>
+        </form>
+        <!--QbPaperQuestionInfo-END-->
+        <!--DtObjectInstanceInfo-START-->
+        <form name="dtObjectInstanceInfo">
+        </form>
+        <!--DtObjectInstanceInfo-END-->
+        
+        
+        <!--DmObjectAttribute-START-->
+        <form name="dmObjectAttribute">
+            <field property="ifCacheOnRunning" depends="required">
+                <arg key="dmObjectAttribute.ifCacheOnRunning"/>
+            </field>
+            <field property="ifFixedProperty" depends="required">
+                <arg key="dmObjectAttribute.ifFixedProperty"/>
+            </field>
+            <field property="ifName" depends="required">
+                <arg key="dmObjectAttribute.ifName"/>
+            </field>
+            <field property="ifObject" depends="required">
+                <arg key="dmObjectAttribute.ifObject"/>
+            </field>
+            <field property="max" depends="required">
+                <arg key="dmObjectAttribute.max"/>
+            </field>
+            <field property="maxlength" depends="required">
+                <arg key="dmObjectAttribute.maxlength"/>
+            </field>
+            <field property="mimlength" depends="required">
+                <arg key="dmObjectAttribute.mimlength"/>
+            </field>
+            <field property="min" depends="required">
+                <arg key="dmObjectAttribute.min"/>
+            </field>
+            <field property="required" depends="required">
+                <arg key="dmObjectAttribute.required"/>
+            </field>
+            <field property="useQuery" depends="required">
+                <arg key="dmObjectAttribute.useQuery"/>
+            </field>
+        </form>
+        <!--DmObjectAttribute-END-->
+        <!--CfgFixedPropertyField-START-->
+        <form name="cfgFixedPropertyField">
+            <field property="library" depends="required">
+                <arg key="cfgFixedPropertyField.library"/>
+            </field>
+            <field property="max" depends="required">
+                <arg key="cfgFixedPropertyField.max"/>
+            </field>
+            <field property="maxlength" depends="required">
+                <arg key="cfgFixedPropertyField.maxlength"/>
+            </field>
+            <field property="mimlength" depends="required">
+                <arg key="cfgFixedPropertyField.mimlength"/>
+            </field>
+            <field property="min" depends="required">
+                <arg key="cfgFixedPropertyField.min"/>
+            </field>
+            <field property="multiple" depends="required">
+                <arg key="cfgFixedPropertyField.multiple"/>
+            </field>
+            <field property="overt" depends="required">
+                <arg key="cfgFixedPropertyField.overt"/>
+            </field>
+            <field property="required" depends="required">
+                <arg key="cfgFixedPropertyField.required"/>
+            </field>
+        </form>
+        <!--CfgFixedPropertyField-END-->
+        <!--CfgFixedPropertyDefine-START-->
+        <form name="cfgFixedPropertyDefine">
+        </form>
+        <!--CfgFixedPropertyDefine-END-->
+        <!--DmObjectModelInfo-START-->
+        <form name="dmObjectModelInfo">
+            <field property="active" depends="required">
+                <arg key="dmObjectModelInfo.active"/>
+            </field>
+            <field property="overt" depends="required">
+                <arg key="dmObjectModelInfo.overt"/>
+            </field>
+        </form>
+        <!--DmObjectModelInfo-END-->
+        
+        <!--QbSelectOptionInfo-START-->
+        <form name="qbSelectOptionInfo">
+            <field property="input" depends="required">
+                <arg key="qbSelectOptionInfo.input"/>
+            </field>
+            <field property="required" depends="required">
+                <arg key="qbSelectOptionInfo.required"/>
+            </field>
+        </form>
+        <!--QbSelectOptionInfo-END-->
+        <!--ContentInfo-START-->
+        <form name="contentInfo">
+        </form>
+        <!--ContentInfo-END-->
+        
+        
+        <!--QbQuestionInfo-START-->
+        <form name="qbQuestionInfo">
+        </form>
+        <!--QbQuestionInfo-END-->
+        <!--QbPaperInfo-START-->
+        <form name="qbPaperInfo">
+            <field property="ifSetPageTimer" depends="required">
+                <arg key="qbPaperInfo.ifSetPageTimer"/>
+            </field>
+            <field property="overt" depends="required">
+                <arg key="qbPaperInfo.overt"/>
+            </field>
+        </form>
+        <!--QbPaperInfo-END-->
+        
+        <!--CkbQuestionInfo-START-->
+        <form name="ckbQuestionInfo">
+        	<field property="followType" depends="required">
+                <arg key="ckbQuestionInfo.followType"/>
+            </field>
+            <field property="themeDesc" depends="required">
+                <arg key="ckbQuestionInfo.themeDesc"/>
+            </field>
+            <field property="status" depends="required">
+                <arg key="ckbQuestionInfo.status"/>
+            </field>
+            <field property="priority" depends="required">
+                <arg key="ckbQuestionInfo.priority"/>
+            </field>
+            <field property="finish" depends="required">
+                <arg key="ckbQuestionInfo.finish"/>
+            </field>
+            <field property="startTime" depends="required">
+                <arg key="ckbQuestionInfo.startTime"/>
+            </field>
+        </form>
+        <!--CkbQuestionInfo-END-->
+        
+        <!--CkbQuestionInfoRec-START-->
+        <form name="ckbQuestionInfoRec">
+        </form>
+        <!--CkbQuestionInfoRec-END-->
+        
+        
+        <!--CkbQuestionInfoFile-START-->
+        <form name="ckbQuestionInfoFile">
+        	<field property="sourceFile" depends="required">
+                <arg key="ckbQuestionInfoFile.sourceFile"/>
+            </field>
+        </form>
+        <!--CkbQuestionInfoFile-END-->
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <!--FunDefine-START-->
+        <form name="funDefine">
+        	<field property="className" depends="required">
+                <arg key="funDefine.className"/>
+            </field>
+            <field property="funCategory" depends="required">
+                <arg key="funDefine.funCategory"/>
+            </field>
+            <field property="funCode" depends="required">
+                <arg key="funDefine.funCode"/>
+            </field>
+            <field property="funType" depends="required">
+                <arg key="funDefine.funType"/>
+            </field>
+            <field property="instruction" depends="required">
+                <arg key="funDefine.instruction"/>
+            </field>
+            <field property="nameCn" depends="required">
+                <arg key="funDefine.nameCn"/>
+            </field>
+            <field property="nameEn" depends="required">
+                <arg key="funDefine.nameEn"/>
+            </field>
+            <field property="returnType" depends="required">
+                <arg key="funDefine.returnType"/>
+            </field>
+            <field property="usedGlobalVariables" depends="required">
+                <arg key="funDefine.usedGlobalVariables"/>
+            </field>
+        </form>
+        <!--FunDefine-END-->
+        <!--FunDefineParam-START-->
+        <form name="funDefineParam">
+        	<field property="nameCn" depends="required">
+                <arg key="funDefineParam.nameCn"/>
+            </field>
+            <field property="nameEn" depends="required">
+                <arg key="funDefineParam.nameEn"/>
+            </field>
+            <field property="paramCode" depends="required">
+                <arg key="funDefineParam.paramCode"/>
+            </field>
+            <field property="paramType" depends="required">
+                <arg key="funDefineParam.paramType"/>
+            </field>
+            <field property="parmaOrder" depends="required">
+                <arg key="funDefineParam.parmaOrder"/>
+            </field>
+        	
+        </form>
+        <!--FunDefineParam-END-->
+        <!--FunInstance-START-->
+        <form name="funInstance">
+            <field property="insName" depends="required">
+                <arg key="funInstance.insName"/>
+            </field>
+            <field property="insCode" depends="required">
+                <arg key="funInstance.insCode"/>
+            </field>
+            <field property="tplTempletInfoId" depends="required">
+                <arg key="funInstance.tplTempletInfo"/>
+            </field>
+        </form>
+        <!--FunInstance-END-->
+        
+        <!--DtQuestionInstanceImportInfo-START-->
+        <form name="dtQuestionInstanceImportInfo">
+            <field property="overt" depends="required">
+                <arg key="dtQuestionInstanceImportInfo.overt"/>
+            </field>
+        </form>
+        <!--DtQuestionInstanceImportInfo-END-->
+        
+        <!--FunDefineReturn-START-->
+        <form name="funDefineReturn">
+        	<field property="returnCode" depends="required">
+                <arg key="funDefineReturn.returnCode"/>
+            </field>
+        </form>
+        <!--FunDefineReturn-END-->
+        <!--RptReportInfo-START-->
+        <form name="rptReportInfo">
+            <field property="library" depends="required">
+                <arg key="rptReportInfo.library"/>
+            </field>
+            <field property="overt" depends="required">
+                <arg key="rptReportInfo.overt"/>
+            </field>
+        </form>
+        <!--RptReportInfo-END-->
+        <!--RptDataModel-START-->
+        <form name="rptDataModel">
+        </form>
+        <!--RptDataModel-END-->
+    </formset>
+</form-validation>
